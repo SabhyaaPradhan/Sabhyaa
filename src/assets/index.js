@@ -30,9 +30,12 @@ import gpt3 from "./gpt3.png";
 import metaverse from "./metaverse.png";
 import tripguide from "./tripguide.png";
 
+import desktop from './desktop.png'
+
 export {
   logo,
   backend,
+  desktop,
   creator,
   mobile,
   web,

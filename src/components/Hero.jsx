@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+import { desktop } from "../assets";
+import { SectionWrapper } from "../hoc";
+import { fadeIn } from "../utils/motion";
 
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
@@ -24,7 +26,25 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      <div
+        className="absolute inset-0 flex justify-center items-center"
+        style={{ zIndex: -1 }}
+      >
+        <motion.div
+          variants={fadeIn("", "", 0.1, 1)}
+          animate="visible"
+        >
+          <div>
+            <img
+              src={desktop}
+              srcSet={`${desktop} 9v00w, ${desktop} 1600w`} // Provide different image sources based on screen width
+              sizes="(max-width: 500px) 1900vw, (max-width: 960px) 70vw, 150vw" // Define the sizes of the image for different screen sizes
+              style={{ maxWidth: "100%", height: "auto" }}
+              alt="Desktop"
+            />
+          </div>
+        </motion.div>
+      </div>
 
       <div className='absolute xs:bottom bottom-5 w-full flex justify-center items-center'>
         <a href='#about'>
@@ -47,4 +67,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default SectionWrapper(Hero);
