@@ -47,9 +47,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        As a dynamic developer, I've been passionate about crafting innovative projects that leverage cutting-edge technology. Recently, I've been working on ChatGPT3, a chatbot application powered by GPT-3 AI, aimed at providing intelligent and engaging conversations. Additionally, I've developed a restaurant management system that streamlines operations and enhances customer experiences through intuitive frontend interfaces. My expertise extends to business applications, where I excel in creating frontend solutions that optimize workflows and drive productivity. Through my projects, I demonstrate a keen understanding of frontend development, blending creativity with functionality to deliver seamless user experiences across various domains.
-      </motion.p>
-
+        Engaged in a diverse range of projects, the focus spans from exploring ChatGPT3's potential in conversational AI to crafting immersive VR experiences within the Metaverse. Additionally, a travel guide application is being developed, prioritizing intuitive frontend design to enhance user exploration and experience. These endeavors reflect a commitment to pushing technological boundaries and shaping the future of digital interaction.
+        </motion.p>
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
